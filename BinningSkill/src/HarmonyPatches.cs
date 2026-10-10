@@ -173,7 +173,7 @@ class GameLocation_CheckGarbage
         GarbageCanData allData = DataLoader.GarbageCans(Game1.content);
         allData.GarbageCans.TryGetValue(garbageCanId, out GarbageCanEntryData data);
         int minLevel = data?.CustomFields?.TryGetInt("drbirbdev.BinningSkill_MinLevel") ?? 0;
-        if (who.GetCustomSkillLevel("drbirbdev.Binning") >= minLevel)
+        if (who.GetCustomBuffedSkillLevel("drbirbdev.Binning") >= minLevel)
         {
             return true;
         }
